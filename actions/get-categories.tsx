@@ -1,3 +1,5 @@
+import { Category } from "@/types"
+
 
 const URL = `${process.env.NEXT_PUBLIC_URL_API}/categories`
 
