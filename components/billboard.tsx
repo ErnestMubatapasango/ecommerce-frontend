@@ -1,3 +1,4 @@
+import { Billboard } from '@/types'
 import React from 'react'
 
 interface BillboardProps {
