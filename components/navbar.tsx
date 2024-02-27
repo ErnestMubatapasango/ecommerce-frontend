@@ -15,7 +15,7 @@ const Navbar = async() => {
     <div className='border-b'>
         <Container>
             <div className='relative h-16 flex items-center px-4 sm:px-6 lg:px-8 '>
-                <Link href='/' className='ml-4 lg:ml-0 gap-x-2'>
+                <Link href='/' className=' lg:ml-0 gap-x-2'>
                     <p className='font-bold text-xl'>STORE</p>
                 </Link>
                 <MainNav data={categories} />

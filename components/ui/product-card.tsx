@@ -5,13 +5,20 @@ import Image from 'next/image'
 import React from 'react'
 import IconButton from './icon-button'
 import Currency from './currency'
+import { useRouter } from 'next/navigation'
 
 interface ProductCard {
     data: Product
 }
 const ProductCard: React.FC<ProductCard> = ({data}) => {
+
+    const router = useRouter();
+    const handleClick = () => {
+        return router.push(`/product/${data?.id}`)
+    }
+
   return (
-    <div className='bg-white rounded-xl cursor-pointer group border p-3 space-y-4'>
+    <div onClick={handleClick} className='bg-white rounded-xl cursor-pointer group border p-3 space-y-4'>
         {/**images and actions */}
         <div className='aspect-square relative bg-gray-100 rounded-xl'>
             <Image 

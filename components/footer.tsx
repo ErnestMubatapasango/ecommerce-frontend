@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='border-t'>
+    <div className='border-t mt-10'>
         <p className="text-black text-center py-10">&copy; 2024 Digital Bots Store, Inc. All rights reserved</p>
     </div>
   )
