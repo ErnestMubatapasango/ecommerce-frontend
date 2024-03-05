@@ -6,9 +6,16 @@ import Container from "@/components/ui/container";
 
 export const revalidate = 0;
 
-const HomePage = async () => {
+interface BillboardIdProp {
+  params: {
+    billboardId: string
+  }
+}
+
+const HomePage: React.FC<BillboardIdProp> = async ({params}) => {
+  
   const products = await getProducts({ isFeatured: true });
-  const billboard = await getBillboard("65d9d2394547d524568d3863");
+  const billboard = await getBillboard(params.billboardId);
 
   return (
     <Container>
