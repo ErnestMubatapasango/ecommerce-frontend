@@ -16,7 +16,7 @@ const ProductCard: React.FC<ProductCard> = ({data}) => {
     const handleClick = () => {
         return router.push(`/product/${data?.id}`)
     }
-
+    
   return (
     <div onClick={handleClick} className='bg-white rounded-xl cursor-pointer group border p-3 space-y-4'>
         {/**images and actions */}

@@ -30,7 +30,8 @@ const CategoryPage: React.FC<CategoryPageProps> = async({params, searchParams}) 
   return (
     <div>
         <Container>
-            <Billboard data={category.billboard} />
+            <Billboard data={category.billboard} /> 
+            Tawanda
             <div className='px-4 sm:px-6 lg:px-8'>
                 <div className='hidden lg:block'>
                     {/**Mobile filters */}

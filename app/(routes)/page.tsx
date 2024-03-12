@@ -15,7 +15,7 @@ interface BillboardIdProp {
 const HomePage: React.FC<BillboardIdProp> = async ({params}) => {
   
   const products = await getProducts({ isFeatured: true });
-  const billboard = await getBillboard(params.billboardId);
+  const billboard = await getBillboard("65d9d2394547d524568d3863");
 
   return (
     <Container>

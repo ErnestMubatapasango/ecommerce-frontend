@@ -6,6 +6,8 @@ import ProductList from '@/components/product-list'
 import Container from '@/components/ui/container'
 import React from 'react'
 
+export const revalidate = 0;
+
 interface ProductPageProps {
     params: {
         productId: string
@@ -14,14 +16,19 @@ interface ProductPageProps {
 
 const ProductPage: React.FC<ProductPageProps> = async ({params}) => {
 
-    const product = await getProduct(params.productId)
+    const product = await getProduct(params.productId);
     const suggestedProducts = await getProducts({categoryId: product?.category?.id})
-    console.log(product.category)
+   
+
+    // if(!product){
+    //     return null;
+    // }
+
   return (
 
     <div className='bg-white'>
         <Container>
-            <div className='px-4 sm:px-6 lg:px-8'>
+            <div className='px-4 sm:px-6 lg:px-8 mt-6'>
                 <div className='lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8'>
                     <Gallery images={product.images} />
                     <div className='mt-10 lg:mt-0'>
