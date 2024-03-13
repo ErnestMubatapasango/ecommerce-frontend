@@ -1,3 +1,4 @@
+
 import getCategory from '@/actions/get-category'
 import getColors from '@/actions/get-colors'
 import getProducts from '@/actions/get-products'
@@ -6,6 +7,9 @@ import Billboard from '@/components/ui/billboard'
 import Container from '@/components/ui/container'
 import React from 'react'
 import Filter from './components/filter'
+import NoResults from '@/components/ui/no-results'
+import ProductCard from '@/components/ui/product-card'
+import MobileFilters from './components/mobile-filters'
 
 interface CategoryPageProps {
     params: {
@@ -26,22 +30,40 @@ const CategoryPage: React.FC<CategoryPageProps> = async({params, searchParams}) 
     const sizes = await getSizes()
     const colors = await getColors()
     const category = await getCategory(params.categoryId)
-
+   
   return (
     <div>
         <Container>
             <Billboard data={category.billboard} /> 
-            Tawanda
             <div className='px-4 sm:px-6 lg:px-8'>
-                <div className='hidden lg:block'>
+                <div className='lg:grid lg:grid-cols-5 lg:gap-x-8'>
                     {/**Mobile filters */}
-                    <Filter 
-                        data={sizes}
-                        name="Sizes"
-                        valueKey="sizeId"
-                    />
+                    <MobileFilters sizes={sizes} colors={colors} />
+                        <div className='hidden lg:block'>
+                            
+                            <Filter 
+                                data={sizes}
+                                name="Sizes"
+                                valueKey="sizeId"
+                            />
+                            <Filter 
+                                data={colors}
+                                name="Colors"
+                                valueKey="colorId"
+                            />
+                        </div>
+                
+                    <div className='mt-6 lg:col-span-4'>
+                        {products.length === 0 && <NoResults />}
+                        <div className='grid grid-cols-1 sm;grid-cols-2 md:grid-cols-3 gap-4'>
+                            {products.map((item) => (
+                                <ProductCard  key={item.id} data={item}/>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
+                
         </Container>
     </div>
   )

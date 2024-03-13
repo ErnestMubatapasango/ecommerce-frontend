@@ -8,7 +8,6 @@ interface infoProps {
     data: Product
 }
 const Info: React.FC<infoProps> = ({data}) => {
-    console.log("info", data)
   return (
     <div className='flex flex-col items-start gap-y-4'>
         <h1 className='font-bold text-3xl text-gray-600'>{data?.name}</h1>
