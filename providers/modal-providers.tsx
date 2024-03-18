@@ -7,13 +7,13 @@ const ModalProvider = () => {
     const [mounted, setIsMounted] = React.useState(false)
 
     React.useEffect(() => {
-        setIsMounted(false)
+        setIsMounted(true)
     }, [])
 
     if(!mounted){
         return null;
     }
-    
+
   return (
     <>
         <PreviewModal />
