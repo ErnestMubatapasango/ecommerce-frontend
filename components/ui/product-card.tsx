@@ -59,7 +59,7 @@ const ProductCard: React.FC<ProductCard> = ({data}) => {
         </div>
         {/**Descritpion */}
         <div>
-            <p className='font-semibold text-lg'>{data.name}</p>
+            <p className='font-semibold text-lg truncate'>{data.name}</p>
             <p className='font-normal text-sm'>{data.category.name}</p>    
         </div>
         {/**Price */}
