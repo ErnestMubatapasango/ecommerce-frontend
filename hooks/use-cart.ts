@@ -8,7 +8,8 @@ interface CartStore {
     items: Product[],
     addItem: (data: Product) => void,
     removeItem: (id: string) => void,
-    removeAll: () => void
+    removeAll: () => void,
+    updatedQuantity: (id: string, quantity: number) => void
 }
 
 const useCart = create(
@@ -29,7 +30,13 @@ const useCart = create(
             set({items: [...get().items.filter(item => item.id !== id)]});
             toast.success("Item removed from cart");
         },
-        removeAll:() => set({items: []})
+        removeAll:() => set({items: []}),
+        updatedQuantity: (id: string, quantity: number) =>  {
+            const updatedItems = get().items.map(item => 
+                item.id === id ? {...item, quantity} : item
+            )
+            set({items: updatedItems})
+        }
 
     }), {
         name: "cart-storage",
