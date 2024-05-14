@@ -34,7 +34,7 @@ const ProductCard: React.FC<ProductCard> = ({data}) => {
         cart.addItem(data)
     }
   return (
-    <div onClick={handleClick} className='bg-white rounded-xl cursor-pointer group border p-3 space-y-4'>
+    <div onClick={handleClick} className='bg-[#E9F1F7] rounded-xl cursor-pointer group border p-3 space-y-4'>
         {/**images and actions */}
         <div className='aspect-square relative bg-gray-100 rounded-xl'>
             <Image 
@@ -59,11 +59,11 @@ const ProductCard: React.FC<ProductCard> = ({data}) => {
         </div>
         {/**Descritpion */}
         <div>
-            <p className='font-semibold text-lg'>{data.name}</p>
-            <p className='font-normal text-sm'>{data.category.name}</p>    
+            <p className='font-semibold text-lg truncate text-[#131B23]'>{data.name}</p>
+            <p className='font-normal text-sm text-[#816C61]'>{data.category.name}</p>    
         </div>
         {/**Price */}
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between text-slate-600'>
             <Currency value={data.price} />
         </div>
     </div>
