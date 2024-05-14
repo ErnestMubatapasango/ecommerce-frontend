@@ -31,7 +31,7 @@ const ProductCard: React.FC<ProductCard> = ({data}) => {
     const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
         event.stopPropagation()
 
-        cart.addItem(data)
+        cart.addItem({...data, quantity: 1})
     }
   return (
     <div onClick={handleClick} className='bg-white rounded-xl cursor-pointer group border p-3 space-y-4'>
@@ -59,7 +59,7 @@ const ProductCard: React.FC<ProductCard> = ({data}) => {
         </div>
         {/**Descritpion */}
         <div>
-            <p className='font-semibold text-lg'>{data.name}</p>
+            <p className='font-semibold text-lg truncate'>{data.name}</p>
             <p className='font-normal text-sm'>{data.category.name}</p>    
         </div>
         {/**Price */}
