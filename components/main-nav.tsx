@@ -4,6 +4,7 @@ import { Category } from '@/types';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 import React from 'react'
+import Container from '@/components/ui/container';
 
 interface MainNavProps {
     data: Category[]
@@ -11,14 +12,30 @@ interface MainNavProps {
 const MainNav: React.FC<MainNavProps> = ({data}) => {
 
     const pathname = usePathname();
-    const routes = data.map((route) => {
-        return {
-            href: `/category/${route.id}`,
-            label: route.name,
-            active: pathname === `/category/${route.id}`
-        }
-    })
+    const routes = [
+        {
+            href: '/',
+            label: 'Home',
+            active: pathname === '/'
+        },
+        {
+            href: '/about',
+            label: 'About',
+            active: pathname === '/about'
+        },
+        {
+            href: '/blog',
+            label: 'Blog',
+            active: pathname === '/blog'
+        },
+        {
+            href: '/contact',
+            label: 'Contact',
+            active: pathname === '/contact'
+        },
+    ]
   return (
+    <Container>
     <nav className="mx-6 flex items-center gap-4">
         {routes.map((route) => (
             <Link
@@ -32,6 +49,7 @@ const MainNav: React.FC<MainNavProps> = ({data}) => {
             </Link>
         ))}
     </nav>
+    </Container>
   )
 }
 

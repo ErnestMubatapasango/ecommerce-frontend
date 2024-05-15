@@ -5,7 +5,6 @@ import MainNav from './main-nav'
 import getCategories from '@/actions/get-categories'
 import NavbarActions from '@/components/navbar-actions'
 import Image from 'next/image'
-
 export const revalidate = 0;
 
 const Navbar = async() => {
