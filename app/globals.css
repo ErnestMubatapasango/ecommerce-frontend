@@ -14,6 +14,37 @@
     border-radius: 30px;
     height: 75vh;
   }
+  #hero1{
+    background-image: url('assets/hero3.png');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+    height: 75vh;
+  }
+  #hero2{
+    background-image: url('assets/hero4.jpg');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+    height: 75vh;
+  }
+  #hero3{
+    background-image: url('assets/hero5.jpg');
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+    height: 75vh;
+  }
+
+  @media  screen and (max-width: 564px) {
+   
+    #hero ,#hero1 ,#hero2, #hero3 {
+      height: 45vh;
+    }
+  }
   @layer base {
     :root {
       --background: 0 0% 100%;
