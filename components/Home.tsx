@@ -29,7 +29,7 @@ const Home = () => {
     },
     {
         id:'hero1',
-        title: 'Unlock Your Business Potential',
+        title: 'Discover Your Business Power',
         description: `Join our platform and unleash the power
         of e-commerce for your products today`,
         buttonTitle: 'Explore More',
@@ -64,7 +64,7 @@ const Home = () => {
               <Card className='bg-white mx-2 md:mx-20 mb-10 relative pt-10'>
                 <CardContent className="border-none outline-none"> */}
                 <div id={heroItem.id} className='bg-white mx-2 md:mx-20 lg:mx-10 mb-10 relative'>
-                  <div className='absolute top-20 left-0 md:left-10  flex flex-col items-center sm:items-start justify-center gap-4 md:gap-8 lg:gap-5 px-5 md:py-10'>
+                  <div className='absolute top-20 left-0 md:left-10  flex flex-col items-center sm:items-start justify-center gap-4 md:gap-6 lg:gap-5 px-5 md:py-1'>
                       <p className='px-5 py-2 border-2 border-[#E7DFC6] text-[#131b23] font-semibold rounded-full'>Hey you</p>
                       <h1 className='text-2xl md:text-5xl w-2/3 xl:text-6xl text-[#131b23] text-center md:text-left font-extrabold'>{heroItem.title}</h1>
                       <p className='text-center w-2/3  md:text-left text-slate-50 text-sm sm:text-lg md:text-xl'>{heroItem.description}</p>

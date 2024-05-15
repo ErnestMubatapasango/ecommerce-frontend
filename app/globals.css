@@ -45,6 +45,18 @@
       height: 45vh;
     }
   }
+  @media  screen and (max-width: 820px) {
+   
+    #hero ,#hero1 ,#hero2, #hero3 {
+      height: 55vh;
+    }
+  }
+  @media  screen and (min-width: 850px) and (max-width: 991px) {
+   
+    #hero ,#hero1 ,#hero2, #hero3 {
+      height: 35vh;
+    }
+  }
   @layer base {
     :root {
       --background: 0 0% 100%;
