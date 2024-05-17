@@ -1,23 +1,49 @@
 "use client"
 import * as React from "react"
 import Autoplay from "embla-carousel-autoplay"
-import { Card, CardContent } from "@/components/ui/card"
-
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel"
-import Container from "./ui/container"
 import Link from "next/link"
+import Image from "next/image"
+import { ArrowRightIcon, Expand, ShoppingCartIcon } from "lucide-react"
 
-const Home = () => {
-    
+import usePreviewModal from "@/hooks/use-preview-modal"
+import useCart from "@/hooks/use-cart"
+import { Product } from "@/types"
+import IconButton from "./ui/icon-button"
+import Router from "next/router"
+
+interface ProductCard {
+  data: Product
+}
+
+
+const Home:React.FC<ProductCard> = ({data}) => {
+
   const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true })
+    Autoplay({ delay: 2000, stopOnInteraction: true })
   )
+  const handleClick = () => {
+    return Router.push(`/product/${data.id}`)
+  }
+
+  const previewModal = usePreviewModal()
+  const onPreview: React.MouseEventHandler<HTMLButtonElement> = (event) => {
+      event.stopPropagation()
+
+      previewModal.onOpen(data)
+  }
+
+  const cart = useCart()
+  const onAddToCart: React.MouseEventHandler<HTMLButtonElement> = (event) => {
+      event.stopPropagation()
+
+      cart.addItem(data)
+  }
   
   const heroData = [
     {
@@ -50,36 +76,152 @@ const Home = () => {
     }
   ]
 
+
+  const cardData = [
+    {
+      title: 'Up to 50% off on all Jackets',
+      image: '/jacket.jpg',
+    },
+    {
+      title: 'Discover the Perfect Fit: New Shirt Collection',
+      image: '/shirt.webp',
+    },
+    {
+      title: 'Get Your Denim Fix: Shop the Latest Jeans',
+      image: '/jean.jpg',
+    },
+  ]
+
+  const denimProducts = [
+    {
+      id: 1,
+      title: 'Classic Denim Jacket',
+      image: 'denim-jacket.jpg',
+      price: 59.99,
+      category: 'jackets'
+    },
+    {
+      id: 2,
+      title: 'Slim Fit Denim Jeans',
+      image: 'jeans.jpg',
+      price: 49.99,
+      category: 'jeans'
+    },
+    {
+      id: 3,
+      title: 'Denim Shorts',
+      image: 'shorts.jpg',
+      price: 29.99,
+      category: 'shorts'
+    },
+    {
+      id: 4,
+      title: 'Long Denim Coat',
+      image: 'coat.jpg',
+      price: 79.99,
+      category: 'coats'
+    }
+  ];
+
+  
   return (
-    <Carousel
-      plugins={[plugin.current]}
-      className="w-full pt-10"
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
-    >
-      <CarouselContent className="flex gap-2">
-        {heroData.map((heroItem: any) => (
-          <CarouselItem key={heroItem.id} className="px-2">
-            {/* <div className="">
-              <Card className='bg-white mx-2 md:mx-20 mb-10 relative pt-10'>
-                <CardContent className="border-none outline-none"> */}
-                <div id={heroItem.id} className='bg-white mx-2 md:mx-20 lg:mx-10 mb-10 relative'>
-                  <div className='absolute top-20 left-0 md:left-10  flex flex-col items-center sm:items-start justify-center gap-4 md:gap-6 lg:gap-5 px-5 md:py-1'>
-                      <p className='px-5 py-2 border-2 border-[#E7DFC6] text-[#131b23] font-semibold rounded-full'>Hey you</p>
-                      <h1 className='text-2xl md:text-5xl w-2/3 xl:text-6xl text-[#131b23] text-center md:text-left font-extrabold'>{heroItem.title}</h1>
-                      <p className='text-center w-2/3  md:text-left text-slate-50 text-sm sm:text-lg md:text-xl'>{heroItem.description}</p>
-                      <Link href='' target="_blank" className='px-5 py-3 bg-[#E7DFC6] text-[#131b23] text-xl font-bold rounded-full'>{heroItem.buttonTitle}</Link>
+    <div className="mx-2 md:mx-20 lg:mx-10 mb-10 space-y-20">
+      <Carousel
+        plugins={[plugin.current]}
+        className="w-full pt-10"
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
+      >
+        <CarouselContent className="flex gap-2">
+          {heroData.map((heroItem: any) => (
+            <CarouselItem key={heroItem.id} className="px-2">
+                  <div id={heroItem.id} className='bg-white mx-3 relative'>
+                    <div className='absolute top-20 left-0 md:left-10 flex flex-col items-center sm:items-start justify-center gap-4 md:gap-6 lg:gap-5 px-5 md:py-1'>
+                        <p className='px-5 py-2 border-2 border-[#E7DFC6] text-[#131b23] font-semibold rounded-full'>Hey you</p>
+                        <h1 className='text-2xl md:text-5xl w-2/3 xl:text-6xl text-[#131b23] text-center md:text-left font-extrabold'>{heroItem.title}</h1>
+                        <p className='text-center w-2/3  md:text-left text-slate-50 text-sm sm:text-lg md:text-xl'>{heroItem.description}</p>
+                        <Link href='' target="_blank" className='px-5 py-3 bg-[#E7DFC6] text-[#131b23] text-xl font-bold rounded-full'>{heroItem.buttonTitle}</Link>
+                    </div>
                   </div>
-                </div>
-                {/* </CardContent>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+
+      <div className="flex justify-between h-fit gap-5">
+        {
+          cardData.map(card => {
+            return (
+              <Card key={card.title} className="flex items-start bg-gray-100 shadow-lg">
+                <CardHeader className="grid gap-4">
+                  <h3 className="text-normal font-medium">{card.title}</h3>
+                  <button className="flex gap-2 items-center font-bold transition-colors hover:text-slate-500">Shop Now <ArrowRightIcon size={20}/></button>
+                </CardHeader>
+                <CardContent>
+                    <Image 
+                      src={`${card.image}`} 
+                      width={120} 
+                      height={120} 
+                      alt="card image" 
+                      className="rounded-xl bg-white p-2 justify-center object-cover mt-2 relative"
+                    />
+                   
+                </CardContent>
               </Card>
-            </div> */}
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      {/* <CarouselPrevious />
-      <CarouselNext /> */}
-    </Carousel>
+            )
+          })
+        }
+      </div>
+
+      <div>
+        <div className="flex justify-between">
+          <div>
+            <h2 className="text-2xl font-bold ">Bestsellers</h2>
+            <p className="font-medium">Browse the best of our favorite sale styles and brands</p>
+          </div>    
+          <button className="flex gap-2 items-center font-bold transition-colors hover:text-slate-500">Browse All Products <ArrowRightIcon size={20}/></button>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 px-4 sm:px-6 mx-0 mt-5">
+          {
+            denimProducts.map(product => {
+              return (
+                <Card key={product.id} className="max-w-80 h-fit shadow-2xl -space-y-2 flex flex-col items-start bg-[#E9F1F7]">
+                  <CardHeader>
+                    <div className='aspect-square relative bg-gray-100 rounded-xl'>
+                      <Image 
+                        src={`/${product.image}`} 
+                        alt='productimage'
+                        width={400} 
+                        height={400}
+                        className="object-contain relative aspect-square bg-white p-2 rounded-xl"
+                      />
+                      <div className='absolute z-20 opacity-0 group-hover:opacity-100 transition w-full px-6 bottom-5'>
+                        <div className='flex gap-x-6 justify-center'>
+                          <IconButton 
+                            icon={<Expand size={20}  className='text-gray-600 bg-black'/>}    
+                            onClick={onPreview}
+                          />
+                          <IconButton 
+                            icon={<ShoppingCartIcon size={20}  className='text-gray-600'/>}    
+                            onClick={onAddToCart}
+                          />
+                        </div>                 
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <CardTitle className="text-lg tracking-normal">{product.title}</CardTitle>
+                    <CardDescription className="capitalize text-base tracking-wide font-medium">{product.category}</CardDescription>
+                  </CardContent>
+                  <CardFooter className="text-lg font-semibold text-slate-500">$ {product.price}</CardFooter>
+                </Card>
+              )
+            })
+          }
+        </div> 
+      </div>
+    </div>
   )
 }
 

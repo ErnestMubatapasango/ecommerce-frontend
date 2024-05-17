@@ -6,7 +6,6 @@ import React, { MouseEventHandler } from 'react'
 import IconButton from './icon-button'
 import Currency from './currency'
 import { useRouter } from 'next/navigation'
-import PreviewModal from '../preview-modal'
 import usePreviewModal from '@/hooks/use-preview-modal'
 import useCart from '@/hooks/use-cart'
 

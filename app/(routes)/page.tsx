@@ -11,10 +11,10 @@ interface BillboardIdProp {
   }
 }
 
-const HomePage: React.FC<BillboardIdProp> = async ({params}) => {
+const HomePage: React.FC<BillboardIdProp> = async () => {
   
-  const products = await getProducts({ isFeatured: true });
-  const billboard = await getBillboard("6613c586c51364c531a1fa9a");
+  // const products = await getProducts({ isFeatured: true });
+  // const billboard = await getBillboard("6613c586c51364c531a1fa9a");
 
   return (
 
