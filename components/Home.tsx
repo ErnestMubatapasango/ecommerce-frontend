@@ -148,7 +148,7 @@ const Home:React.FC<ProductCard> = ({data}) => {
   
   return (
     // {Hero Section}
-    <div className="mx-2 md:mx-20 lg:mx-10 mb-10 space-y-20">
+    <div className="mx-2 md:mx-20 lg:mx-10 space-y-20">
       <Carousel
         plugins={[plugin.current]}
         className="w-full pt-10"
@@ -171,13 +171,13 @@ const Home:React.FC<ProductCard> = ({data}) => {
         </CarouselContent>
       </Carousel>     
       {/* Post Hero Section */}
-      <div className="flex justify-between h-fit gap-5">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-10">
         {
           cardData.map(card => {
             return (
-              <Card key={card.title} className="flex items-start bg-gray-100 shadow-lg">
+              <Card key={card.title} className="flex justify-start items-start bg-gray-100 shadow-lg h-fit">
                 <CardHeader className="grid gap-4">
-                  <h3 className="text-normal font-medium">{card.title}</h3>
+                  <h3 className="text-sm md:text-normal font-medium">{card.title}</h3>
                   <button className="flex gap-2 items-center font-bold transition-colors hover:text-slate-500">Shop Now <ArrowRightIcon size={20}/></button>
                 </CardHeader>
                 <CardContent>
@@ -186,7 +186,7 @@ const Home:React.FC<ProductCard> = ({data}) => {
                       width={120} 
                       height={120} 
                       alt="card image" 
-                      className="rounded-xl bg-white p-2 justify-center object-cover mt-2 relative"
+                      className="rounded-xl bg-white p-2 justify-center object-cover object-top mt-4 relative w-[9rem] h-[6rem] md:w-[9rem] md:h-[8rem]"
                     />
                    
                 </CardContent>
@@ -196,7 +196,7 @@ const Home:React.FC<ProductCard> = ({data}) => {
         }
       </div>     
       {/* {Best seller section} */}
-      <div>
+      {/* <div>
         <div className="flex justify-between">
           <div>
             <h2 className="text-2xl font-bold ">Bestsellers</h2>
@@ -243,9 +243,9 @@ const Home:React.FC<ProductCard> = ({data}) => {
             })
           }
         </div> 
-      </div>
+      </div> */}
       {/* {Lifestyle} */}
-      <div className="space-y-20">
+      {/* <div className="space-y-20">
         <div className="flex flex-col justify-center items-center gap-5">
           <h3 className="text-6xl font-bold">Denimize Your Lifestyle</h3>
           <p className="w-1/2 text-lg text-center tracking-wide">
@@ -290,9 +290,9 @@ const Home:React.FC<ProductCard> = ({data}) => {
             </div>
           </div>          
         </div>
-      </div>
+      </div> */}
       {/* {Infinite Scroll Animation} */}
-      <div className="scroller bg-gray-100">
+      {/* <div className="scroller bg-gray-100">
         <div className="flex w-max justify-center">
           <ul className="flex py-10 justify-between animate-loop-scroll">
             <li className="flex items-center gap-8 text-gray-500 font-extrabold text-7xl"><Dot size={70} /> <ShieldCheck size={70} strokeWidth={2}/> 30 day guarantee <Dot size={70} /></li>
@@ -307,7 +307,7 @@ const Home:React.FC<ProductCard> = ({data}) => {
         </div>       
       </div>
       {/* {Catgories} */}
-      <div className="grid grid-rows-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-9">
+      {/* <div className="grid grid-rows-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-9">
           {
             categoriesData.map(category => {
               return (
@@ -318,37 +318,59 @@ const Home:React.FC<ProductCard> = ({data}) => {
               )
             })
           }
-      </div>
+      </div> */}
       {/* {Testimonials} */}
-      <div className="flex gap-x-5 gap-y-8 w-full">
-          <div className="flex flex-col items-start space-y-3  p-6 rounded-3xl w-1/2 h-fit">
-            <h2 className="text-7xl font-extrabold text-left">
-              Testimonials
-            </h2>
-            <div className="bg-[#131B28] rounded-3xl p-4 space-y-5">
-              <div className="flex gap-4 items-start">
-                <Image src='/user1.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
-                <div>
-                  <div className="flex gap-1">
-                    <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                    <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                    <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                    <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                    <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                  </div>
-                  <h3 className="text-2xl text-slate-100 font-semibold">Anna Hickson</h3>
-                </div>                
-              </div>
-              
-              <p className="text-left font-medium  text-slate-100">
-                These denim shorts and jeans are amazing! Perfect fit, great quality, and super comfortable.
-                The jacket I bought is also fantastic. Will definitely shop here again!
-              </p>
+      {/*<div className="flex gap-x-5 gap-y-8 w-full">
+        <div className="flex flex-col items-start space-y-3  p-6 rounded-3xl w-1/2 h-fit">
+          <h2 className="text-7xl font-extrabold text-left">
+            Testimonials
+          </h2>
+          <div className="bg-[#131B28] rounded-3xl p-4 space-y-5">
+            <div className="flex gap-4 items-start">
+              <Image src='/user1.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
+              <div>
+                <div className="flex gap-1">
+                  <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                </div>
+                <h3 className="text-2xl text-slate-100 font-semibold">Anna Hickson</h3>
+              </div>                
             </div>
             
-            <div className="bg-slate-200 rounded-3xl p-4 space-y-5">
-              <div className="flex gap-4 items-end justify-end">
-                <Image src='/user5.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
+            <p className="text-left font-medium  text-slate-100">
+              These denim shorts and jeans are amazing! Perfect fit, great quality, and super comfortable.
+              The jacket I bought is also fantastic. Will definitely shop here again!
+            </p>
+          </div>
+          
+          <div className="bg-slate-200 rounded-3xl p-4 space-y-5">
+            <div className="flex gap-4 items-end justify-end">
+              <Image src='/user5.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
+              <div>
+                <div className="flex gap-1">
+                  <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                </div>
+                <h3 className="text-2xl font-semibold">Yvonne Thompson</h3>
+              </div>                
+            </div>
+            
+            <p className="text-left font-medium  text-[#131B23]">
+              Absolutely in love with my new shirt and trench coat! They&apos;re 
+              comfortable, and perfect for any occasion. Exceptional quality and fast delivery!
+            </p>
+          </div>
+        </div>
+        <div className="w-1/2 h-80">
+          <div className="bg-[#2274A5] bg-opacity-90  p-4 rounded-3xl flex flex-col items-center gap-2 h-fit">
+            <div className="flex gap-4 items-start">
+                <Image src='/user2.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
                 <div>
                   <div className="flex gap-1">
                     <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
@@ -357,20 +379,19 @@ const Home:React.FC<ProductCard> = ({data}) => {
                     <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
                     <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
                   </div>
-                  <h3 className="text-2xl font-semibold">Yvonne Thompson</h3>
+                  <h3 className="text-2xl text-slate-100 font-semibold">Samantha Samuels</h3>
+                  <p className="text-left font-medium  text-slate-100">
+                    I purchased a jacket, trench coat, and shorts. All three are of excellent quality,
+                    fit perfectly, and are very stylish. Couldn&apos;t be happier with my purchase!
+                  </p>
                 </div>                
               </div>
-              
-              <p className="text-left font-medium  text-[#131B23]">
-                Absolutely in love with my new shirt and trench coat! They&apos;re 
-                comfortable, and perfect for any occasion. Exceptional quality and fast delivery!
-              </p>
             </div>
-          </div>
-          <div className="w-1/2 h-80">
-            <div className="bg-[#2274A5] bg-opacity-90  p-4 rounded-3xl flex flex-col items-center gap-2 h-fit">
-              <div className="flex gap-4 items-start">
-                  <Image src='/user2.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 mt-3 gap-4 text-white">
+              <div className="flex flex-col items-center gap-2 bg-[#E9F1F7] p-4 rounded-3xl">
+                <div className="flex gap-4 items-start">
+                  <Image src='/user3.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
                   <div>
                     <div className="flex gap-1">
                       <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
@@ -379,57 +400,48 @@ const Home:React.FC<ProductCard> = ({data}) => {
                       <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
                       <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
                     </div>
-                    <h3 className="text-2xl text-slate-100 font-semibold">Samantha Samuels</h3>
-                    <p className="text-left font-medium  text-slate-100">
-                      I purchased a jacket, trench coat, and shorts. All three are of excellent quality,
-                      fit perfectly, and are very stylish. Couldn&apos;t be happier with my purchase!
-                    </p>
-                  </div>                
+                    <h3 className="text-2xl text-[#131B28] font-semibold">Gerald Mhlanga</h3>                   
+                  </div>                                  
                 </div>
+                <p className="text-left font-medium w-full text-[#131B28]">
+                  I am thrilled with my jacket and jeans! Both pieces fit perfectly 
+                  and are incredibly fashionable. Quality and comfort are top-notch. Highly recommend this store!
+                </p>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 mt-3 gap-4 text-white">
-                <div className="flex flex-col items-center gap-2 bg-[#E9F1F7] p-4 rounded-3xl">
-                  <div className="flex gap-4 items-start">
-                    <Image src='/user3.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
-                    <div>
-                      <div className="flex gap-1">
-                        <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                        <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                        <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                        <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                        <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                      </div>
-                      <h3 className="text-2xl text-[#131B28] font-semibold">Gerald Mhlanga</h3>                   
-                    </div>                                  
-                  </div>
-                  <p className="text-left font-medium w-full text-[#131B28]">
-                    I am thrilled with my jacket and jeans! Both pieces fit perfectly 
-                    and are incredibly fashionable. Quality and comfort are top-notch. Highly recommend this store!
-                  </p>
+              <div className="flex flex-col items-center justify-center gap-4 bg-[#E7DFC6] p-4 rounded-3xl">
+                <div className="flex gap-4 items-start">
+                  <Image src='/user4.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
+                  <div>
+                    <div className="flex gap-1">
+                      <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                      <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                      <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                      <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                      <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
+                    </div>
+                    <h3 className="text-2xl text-[#131B28] font-semibold">Thomas Rafik</h3>                   
+                  </div>                                  
                 </div>
-                <div className="flex flex-col items-center justify-center gap-4 bg-[#E7DFC6] p-4 rounded-3xl">
-                  <div className="flex gap-4 items-start">
-                    <Image src='/user4.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
-                    <div>
-                      <div className="flex gap-1">
-                        <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                        <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                        <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                        <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                        <Star className="bg-clip-text text-yellow-400" size={25} strokeWidth={3}/>
-                      </div>
-                      <h3 className="text-2xl text-[#131B28] font-semibold">Thomas Rafik</h3>                   
-                    </div>                                  
-                  </div>
-                  <p className="text-left font-medium w-full text-[#131B28]">
-                    The trench coat I purchased is fantastic! It&apos;s stylish, fits well, and the material is 
-                    durable. Also loved the shirts I got. Great quality
-                  </p>
-                </div>
+                <p className="text-left font-medium w-full text-[#131B28]">
+                  The trench coat I purchased is fantastic! It&apos;s stylish, fits well, and the material is 
+                  durable. Also loved the shirts I got. Great quality
+                </p>
               </div>
+            </div>
           </div>          
+        </div> */}
+      {/* {FAQ} */}
+      {/* <div className="bg-[#131B28] text-[#E9F1F7] flex flex-col items-center justify-center gap-5 rounded-3xl h-[40rem]">
+        <h1 className="text-6xl font-bold text-center text-white">Have A Question? <br/> We Are Here To Help</h1>
+        <div className="flex">
+          <Image src="/user6.jpg" width={100} height={100} alt="faq" className="w-10 object-contain rounded-full"/>
+          <Image src="/user7.jpg" width={100} height={100} alt="faq" className="w-10 object-contain rounded-full"/>
+          <Image src="/user8.jpg" width={100} height={100} alt="faq" className="w-10 object-contain rounded-full"/>
+          <Image src="/user9.jpg" width={100} height={100} alt="faq" className="w-10 object-contain rounded-full"/>
         </div>
+        <p>Our customer support is available<br /> monday to friday: 8am-8:30pm.</p>
+        <button className="bg-[#E7DFC6] py-4 px-8 text-xl font-bold text-slate-500 rounded-2xl">Contact us</button>
+      </div> */}
     </div>
   )
 }
