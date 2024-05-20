@@ -122,6 +122,29 @@ const Home:React.FC<ProductCard> = ({data}) => {
     }
   ];
 
+  const categoriesData = [
+    {
+      image: `/cshorts.jpg`,
+      title: 'Shorts'
+    },
+    {
+      image: `/cjeans.jpg`,
+      title: 'Jeans'
+    },
+    {
+      image: `/cs.jpg`,
+      title: 'Shirts'
+    },
+    {
+      image: `/cj.jpg`,
+      title: 'Jackets'
+    },
+    {
+      image: `/ccoats.jpg`,
+      title: 'Coats'
+    },
+  ]
+
   
   return (
     // {Hero Section}
@@ -282,6 +305,19 @@ const Home:React.FC<ProductCard> = ({data}) => {
             <li className="flex items-center gap-8 text-gray-500 font-extrabold text-7xl"><Dot size={70} /> <Truck size={70} strokeWidth={2}/> Free delivery</li>  
           </ul>
         </div>       
+      </div>
+      {/* {Catgories} */}
+      <div className="grid grid-rows-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-9">
+          {
+            categoriesData.map(category => {
+              return (
+                <div key={category.title} className="h-fit cursor-pointer bg-[#131B23] ease-in-out duration-300 hover:scale-125 flex flex-col gap-3 items-center aspect-square p-2 rounded-3xl">
+                  <Image src={category.image} alt='category image' className="object-cover aspect-square h-40 rounded-2xl" width={200} height={200} />
+                  <h2 className="text-[#E9F1F7] font-bold text-2xl tracking-wide">{category.title}</h2>
+                </div>
+              )
+            })
+          }
       </div>
       
     </div>
