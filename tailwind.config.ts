@@ -1,3 +1,4 @@
+import { transform } from "next/dist/build/swc"
 import type { Config } from "tailwindcss"
 
 const config = {
@@ -74,6 +75,15 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+    },
+    animation: {
+      "loop-scroll": "loop-scroll 50s linear infinite"
+    },
+    keyframes: {
+      "loop-scroll": {
+        // from: {transform: "translateX(0)"},
+        to: {transform: "translateX(-100%)"},
       },
     },
   },

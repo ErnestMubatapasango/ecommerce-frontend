@@ -9,8 +9,7 @@ import {
 } from "@/components/ui/carousel"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRightIcon, Expand, ShoppingCartIcon } from "lucide-react"
-
+import { ArrowRightIcon, CreditCard, Dot, Expand, ShieldCheck, ShoppingCartIcon, Truck } from "lucide-react"
 import usePreviewModal from "@/hooks/use-preview-modal"
 import useCart from "@/hooks/use-cart"
 import { Product } from "@/types"
@@ -222,7 +221,7 @@ const Home:React.FC<ProductCard> = ({data}) => {
           }
         </div> 
       </div>
-      {/* {} */}
+      {/* {Lifestyle} */}
       <div className="space-y-20">
         <div className="flex flex-col justify-center items-center gap-5">
           <h3 className="text-6xl font-bold">Denimize Your Lifestyle</h3>
@@ -249,7 +248,7 @@ const Home:React.FC<ProductCard> = ({data}) => {
           <div className="w-2/3 h-80">
             <div className="bg-[#E7DFC6] p-4 rounded-3xl flex flex-col items-center gap-2 h-fit">
                 <h3 className="text-3xl font-bold text-slate-400">Elegance, Redefined</h3>
-                <Image className="" src='/access.png' alt="" width={170} height={170}/>
+                <Image className="" src='/access.png' alt="" width={178} height={170}/>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 mt-3 gap-4 text-white">
@@ -269,6 +268,22 @@ const Home:React.FC<ProductCard> = ({data}) => {
           </div>          
         </div>
       </div>
+      {/* {Infinite Scroll Animation} */}
+      <div className="scroller bg-gray-100">
+        <div className="flex w-max justify-center">
+          <ul className="flex py-10 justify-between animate-loop-scroll">
+            <li className="flex items-center gap-8 text-gray-500 font-extrabold text-7xl"><Dot size={70} /> <ShieldCheck size={70} strokeWidth={2}/> 30 day guarantee <Dot size={70} /></li>
+            <li className="flex items-center gap-8 text-gray-500 font-extrabold text-7xl"><CreditCard size={70} strokeWidth={2}/> Secure payments </li>
+            <li className="flex items-center gap-8 text-gray-500 font-extrabold text-7xl"><Dot size={70} /> <Truck size={70} strokeWidth={2}/> Free delivery</li>  
+          </ul>
+          <ul className="flex py-10 justify-between animate-loop-scroll">
+            <li className="flex items-center gap-8 text-gray-500 font-extrabold text-7xl"><Dot size={70} /> <ShieldCheck size={70} strokeWidth={2}/> 30 day guarantee <Dot size={70} /></li>
+            <li className="flex items-center gap-8 text-gray-500 font-extrabold text-7xl"><CreditCard size={70} strokeWidth={2}/> Secure payments </li>
+            <li className="flex items-center gap-8 text-gray-500 font-extrabold text-7xl"><Dot size={70} /> <Truck size={70} strokeWidth={2}/> Free delivery</li>  
+          </ul>
+        </div>       
+      </div>
+      
     </div>
   )
 }
