@@ -208,7 +208,7 @@ const Home:React.FC<ProductCard> = ({data}) => {
           <Link href='/store' className="flex gap-2 items-center font-bold transition-colors hover:text-slate-500">Browse All Products <ArrowRightIcon size={20}/></Link>
         </div>
 
-        <div className="grid xs:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 px-4 sm:px-6 mx-0 mt-5">
+        <div className="grid xs:grid-cols-2 lg:grid-cols-4 justify-center gap-x-8 gap-y-8 px-4 sm:px-6 mx-0 mt-5">
           {
             denimProducts.map(product => {
               return (
@@ -253,10 +253,10 @@ const Home:React.FC<ProductCard> = ({data}) => {
         </div> 
       </div>
       {/* {Lifestyle} */}
-      {/* <div className="space-y-20">
+      <div className="space-y-20">
         <div className="flex flex-col justify-center items-center gap-5">
-          <h3 className="text-6xl font-bold">Denimize Your Lifestyle</h3>
-          <p className="w-1/2 text-lg text-center tracking-wide">
+          <h3 className="text-4xl md:text-6xl text-center font-bold">Denimize Your Lifestyle</h3>
+          <p className=" w-full sm:w-1/2 text-sm  sm:text-base md:text-lg text-center tracking-wide">
             Embark on a journey of effortless style and enhanced functionality with our 
             denim-centric solutions, meticulously crafted to elevate your daily 
             attire and experiences.
@@ -264,33 +264,32 @@ const Home:React.FC<ProductCard> = ({data}) => {
         </div>
         
 
-        <div className="flex gap-x-5 gap-y-8 w-full">
-          <div className="flex flex-col items-center space-y-3  bg-[#E9F1F7] p-6 rounded-3xl w-1/3 h-fit">
-            <h3 className="text-5xl font-bold">
+        <div className="flex flex-col sm:flex-row gap-x-5 gap-y-8 w-full">
+          <div className="flex flex-col items-center space-y-3  bg-[#E9F1F7] p-6 rounded-3xl sm:w-1/2 md:w-1/3 h-fit">
+            <h3 className=" text-3xl md:text-5xl text-center font-bold">
               Denim Time
             </h3>
-
-            <p className="text-center font-medium text-[#131B23]">
+            <p className="text-center text-sm md:text-base font-medium text-[#131B23]">
               Smart denim blends fashion with function, offering unparalleled style and versatility, from 
               fabrics to tailored designs that seamlessly integrate with your modern lifestyle.
             </p>
-            <Image src='/denim.png' alt="" id="collection" className="grayscale" width={220} height={200} />
+            <Image src='/denim.png' alt="" id="collection" className="grayscale md:h-fit" width={232} height={200} />
           </div>
-          <div className="w-2/3 h-80">
+          <div className="sm:w-1/2 md:w-2/3 md:h-80">
             <div className="bg-[#E7DFC6] p-4 rounded-3xl flex flex-col items-center gap-2 h-fit">
-                <h3 className="text-3xl font-bold text-slate-400">Elegance, Redefined</h3>
-                <Image className="" src='/access.png' alt="" width={178} height={170}/>
+                <h3 className="text-xl md:text-3xl font-bold text-slate-400">Elegance, Redefined</h3>
+                <Image className="" src='/access.png' alt="" width={180} height={170}/>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 mt-3 gap-4 text-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 mt-3 gap-4 text-white w-full">
               <div className="flex flex-col items-center gap-2 bg-[#131B23] p-4 rounded-3xl">
-                <h3 className="text-3xl font-bold text-center"><span className="text-[#E7DFC6] text-4xl">30 Hours</span> left to get Your Denim Bliss</h3>
+                <h3 className="text-xl md:text-3xl font-bold text-center"><span className="text-[#E7DFC6] text-4xl">30 Hours</span> left to get Your Denim Bliss</h3>
                 <p className="text-center">Last Chance: 30 Hours Left to Embrace Your Denim Delight! Act Now Before It&apos;s Gone!</p>
                 <Image src='/collection.jpg' id="hours" className="grayscale" alt="" width={200} height={100}/>
               </div>
-              <div className="flex flex-col items-center justify-center gap-4 bg-[#2274A5] p-4 rounded-3xl">
-                <p className="text-center text-3xl">Checkout our store for the most exclusive new collection</p>
-                <Link href='/store' className="flex gap-2 items-center font-bold rounded-xl  transition-colors text-black p-2 bg-[#E9F1F7]  hover:text-slate-500">
+              <div className="hidden md:flex flex-col items-center justify-center gap-4 bg-[#2274A5] p-4 rounded-3xl">
+                <p className="text-center text-xl md:text-3xl">Checkout our store for the most exclusive new collection</p>
+                <Link href='/store' className="flex gap-2 items-center font-bold rounded-xl  transition-colors text-black p-2 bg-[#E9F1F7] hover:text-slate-500">
                   Browse All Products 
                   <ArrowRightIcon size={20}/>
                 </Link>
@@ -298,7 +297,7 @@ const Home:React.FC<ProductCard> = ({data}) => {
             </div>
           </div>          
         </div>
-      </div> */}
+      </div>
       {/* {Infinite Scroll Animation} */}
       {/* <div className="scroller bg-gray-100">
         <div className="flex w-max justify-center">
