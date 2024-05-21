@@ -18,7 +18,7 @@ const HomePage: React.FC<BillboardIdProp> = async () => {
 
   return (
 
-      <div className="space-y-10 pl-9 pr-5 md:px-12 pt-20 mt-10 mb-20">
+      <div className="space-y-10 mx-2 md:mx-8 pt-20 mt-10 mb-20">
         <Home />  
         {/* <Billboard 
           data={billboard}

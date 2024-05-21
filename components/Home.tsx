@@ -78,7 +78,7 @@ const Home:React.FC<ProductCard> = ({data}) => {
 
   const cardData = [
     {
-      title: 'Up to 50% off on all Jackets',
+      title: 'Up to 50% off on all stylish winter jackets.',
       image: '/jacket.jpg',
     },
     {
@@ -148,7 +148,7 @@ const Home:React.FC<ProductCard> = ({data}) => {
   
   return (
     // {Hero Section}
-    <div className="mx-2 md:mx-20 lg:mx-10 space-y-20">
+    <div className="space-y-20">
       <Carousel
         plugins={[plugin.current]}
         className="w-full pt-10"
@@ -157,13 +157,13 @@ const Home:React.FC<ProductCard> = ({data}) => {
       >
         <CarouselContent className="flex gap-2">
           {heroData.map((heroItem: any) => (
-            <CarouselItem key={heroItem.id} className="px-2">
-                  <div id={heroItem.id} className='bg-white mx-3 relative'>
-                    <div className='absolute top-20 left-0 md:left-10 flex flex-col items-center sm:items-start justify-center gap-4 md:gap-6 lg:gap-5 px-5 md:py-1'>
-                        <p className='px-5 py-2 border-2 border-[#E7DFC6] text-[#131b23] font-semibold rounded-full'>Hey you</p>
-                        <h1 className='text-2xl md:text-5xl w-2/3 xl:text-6xl text-[#131b23] text-center md:text-left font-extrabold'>{heroItem.title}</h1>
-                        <p className='text-center w-2/3  md:text-left text-slate-50 text-sm sm:text-lg md:text-xl'>{heroItem.description}</p>
-                        <Link href='' target="_blank" className='px-5 py-3 bg-[#E7DFC6] text-[#131b23] text-xl font-bold rounded-full'>{heroItem.buttonTitle}</Link>
+            <CarouselItem key={heroItem.id}>
+                  <div id={heroItem.id} className='bg-white relative'>
+                    <div className='absolute top-20 left-10 flex flex-col items-center sm:items-start justify-center gap-4 md:gap-6 lg:gap-5 px-5 md:py-1'>
+                        <p className='px-5 py-2 border-2 border-[#E7DFC6] text-white md:text-[#131b23] font-semibold rounded-full'>Hey you</p>
+                        <h1 className='text-3xl sm:text-4xl md:text-5xl sm:w-2/3 xl:text-6xl text-[#131b23] text-center sm:text-left font-extrabold'>{heroItem.title}</h1>
+                        <p className='text-center sm:w-2/3  sm:text-left text-slate-50 text-sm sm:text-lg md:text-xl'>{heroItem.description}</p>
+                        <Link href='' target="_blank" className='px-5 py-3 bg-[#E7DFC6] text-[#131b23] text-sm sm:text-xl font-bold rounded-full'>{heroItem.buttonTitle}</Link>
                     </div>
                   </div>
             </CarouselItem>
@@ -171,24 +171,23 @@ const Home:React.FC<ProductCard> = ({data}) => {
         </CarouselContent>
       </Carousel>     
       {/* Post Hero Section */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-between gap-5" >
         {
           cardData.map(card => {
             return (
-              <Card key={card.title} className="flex justify-start items-start bg-gray-100 shadow-lg h-fit">
-                <CardHeader className="grid gap-4">
-                  <h3 className="text-sm md:text-normal font-medium">{card.title}</h3>
-                  <button className="flex gap-2 items-center font-bold transition-colors hover:text-slate-500">Shop Now <ArrowRightIcon size={20}/></button>
+              <Card key={card.title} className="flex flex-row justify-between items-center xs:items-start bg-gray-100 shadow-lg md:h-fit">
+                <CardHeader className="grid gap-2 md:gap-4">
+                  <h3 className="text-sm xs:text-base font-medium">{card.title}</h3>
+                  <button className="flex md:gap-2 text-sm text-left items-center font-bold transition-colors hover:text-slate-500">Shop Now <ArrowRightIcon size={20}/></button>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="aspect-square">
                     <Image 
                       src={`${card.image}`} 
-                      width={120} 
-                      height={120} 
+                      width={200} 
+                      height={200} 
                       alt="card image" 
-                      className="rounded-xl bg-white p-2 justify-center object-cover object-top mt-4 relative w-[9rem] h-[6rem] md:w-[9rem] md:h-[8rem]"
-                    />
-                   
+                      className="rounded-xl aspect-square bg-white md:p-2 justify-center object-cover object-top mt-4"
+                    />    
                 </CardContent>
               </Card>
             )

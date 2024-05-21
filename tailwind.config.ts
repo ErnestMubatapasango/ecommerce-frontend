@@ -19,6 +19,10 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        "xs": "450px",
+        "sm": "500px",
+      }, 
       aspectRatio: {
         '4/3': '4 / 3',
       },
