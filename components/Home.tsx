@@ -314,11 +314,11 @@ const Home:React.FC<ProductCard> = ({data}) => {
         </div>       
       </div>
       {/* {Catgories} */}
-      {/* <div className="grid grid-rows-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-9">
+       <div className="grid justify-items-center grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-9">
           {
             categoriesData.map(category => {
               return (
-                <div key={category.title} className="h-fit cursor-pointer bg-gray-200 ease-in-out duration-300 hover:scale-125 flex flex-col gap-3 items-center aspect-square p-2 rounded-3xl">
+                <div key={category.title} className="cursor-pointer bg-gray-200 ease-in-out duration-300 h-[14rem] hover:scale-125 flex flex-col gap-3 items-center aspect-square p-2 rounded-3xl">
                   <Image src={category.image} alt='category image' className="object-cover aspect-square h-40 rounded-2xl" width={200} height={200} />
                   <h2 className="text-[#131B23] font-extrabold text-2xl tracking-normal">{category.title}</h2>
                 </div>
