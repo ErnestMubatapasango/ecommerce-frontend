@@ -93,34 +93,38 @@ const Home:React.FC<ProductCard> = ({data}) => {
 
   const denimProducts = [
     {
-      id: 1,
-      title: 'Classic Denim Jacket',
-      image: 'denim-jacket.jpg',
-      price: 59.99,
-      category: 'jackets'
+        id: 1,
+        title: 'Classic Jacket',
+        image: 'denim-jacket.jpg',
+        price: 59.99,
+        category: 'jackets',
+        description: 'Timeless design, durable fabric.'
     },
     {
-      id: 2,
-      title: 'Slim Fit Denim Jeans',
-      image: 'jeans.jpg',
-      price: 49.99,
-      category: 'jeans'
+        id: 2,
+        title: 'Slim Fit Jeans',
+        image: 'jeans.jpg',
+        price: 49.99,
+        category: 'jeans',
+        description: 'Comfortable fit, trendy style.'
     },
     {
-      id: 3,
-      title: 'Denim Shorts',
-      image: 'shorts.jpg',
-      price: 29.99,
-      category: 'shorts'
+        id: 3,
+        title: 'Shorts',
+        image: 'shorts.jpg',
+        price: 29.99,
+        category: 'shorts',
+        description: 'Casual look, summer essential.'
     },
     {
-      id: 4,
-      title: 'Long Denim Coat',
-      image: 'coat.jpg',
-      price: 79.99,
-      category: 'coats'
+        id: 4,
+        title: 'Long Coat',
+        image: 'coat.jpg',
+        price: 79.99,
+        category: 'coats',
+        description: 'Elegant cut, warm material.'
     }
-  ];
+];
 
   const categoriesData = [
     {
@@ -195,20 +199,20 @@ const Home:React.FC<ProductCard> = ({data}) => {
         }
       </div>     
       {/* {Best seller section} */}
-      {/* <div>
+      <div>
         <div className="flex justify-between">
           <div>
             <h2 className="text-2xl font-bold ">Bestsellers</h2>
-            <p className="font-medium">Browse the best of our favorite sale styles and brands</p>
+            <p className=" text-sm sm:text-base font-medium">Browse the best of our<br className="md:hidden block" /> favorite sale styles and brands</p>
           </div>    
           <Link href='/store' className="flex gap-2 items-center font-bold transition-colors hover:text-slate-500">Browse All Products <ArrowRightIcon size={20}/></Link>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 px-4 sm:px-6 mx-0 mt-5">
+        <div className="grid xs:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 px-4 sm:px-6 mx-0 mt-5">
           {
             denimProducts.map(product => {
               return (
-                <Card key={product.id} className="max-w-80 h-fit shadow-2xl -p-4 -space-y-2 flex flex-col items-start bg-[#E9F1F7]">
+                <Card key={product.id} className="max-w-80 md:h-fit shadow-2xl relative -p-4 -space-y-2 flex flex-col items-start bg-[#E9F1F7]">
                   <CardHeader>
                     <div className='aspect-square relative bg-gray-100 rounded-xl'>
                       <Image 
@@ -234,7 +238,12 @@ const Home:React.FC<ProductCard> = ({data}) => {
                   </CardHeader>
                   <CardContent>
                     <CardTitle className="text-lg tracking-normal">{product.title}</CardTitle>
-                    <CardDescription className="capitalize text-base tracking-wide font-medium">{product.category}</CardDescription>
+                    <CardDescription className="capitalize text-base tracking-wide">
+                      <span className="absolute top-12 inline-flex items-center font-semibold rounded-tl-none rounded-bl-none rounded-md bg-gray-200 px-2 py-1 text-sm text-slate-500 ring-1 ring-inset ring-gray-600/10">
+                        {product.category}
+                      </span>
+                      <p>{product.description}</p>
+                      </CardDescription>
                   </CardContent>
                   <CardFooter className="text-lg font-semibold text-slate-500">$ {product.price}</CardFooter>
                 </Card>
@@ -242,7 +251,7 @@ const Home:React.FC<ProductCard> = ({data}) => {
             })
           }
         </div> 
-      </div> */}
+      </div>
       {/* {Lifestyle} */}
       {/* <div className="space-y-20">
         <div className="flex flex-col justify-center items-center gap-5">
