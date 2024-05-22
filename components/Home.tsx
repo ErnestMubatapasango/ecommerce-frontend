@@ -329,7 +329,7 @@ const Home:React.FC<ProductCard> = ({data}) => {
       {/* {Testimonials} */}
       <div className="flex flex-col sm:flex-row gap-x-5 gap-y-3 md:gap-y-8 w-full">
         <div className="flex flex-col items-start space-y-3 rounded-3xl xs:w-full sm:w-1/2 md:w-1/3 lg:w-1/2">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-left inline-flex z-10">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-left inline-flex z-10">
             Testimon<span className="sm:text-[#131B23] md:text-[#E9F1F7] lg:text-[#131B23]">ials</span>
           </h2>
           <div className="bg-[#131B28] rounded-3xl p-4 space-y-5">
@@ -337,11 +337,11 @@ const Home:React.FC<ProductCard> = ({data}) => {
               <Image src='/user1.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
               <div>
                 <div className="flex gap-1">
-                  <Star className="bg-clip-text text-yellow-400 w-5 h-5"  strokeWidth={3}/>
-                  <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                  <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                  <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                  <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5"  strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
                 </div>
                 <h3 className="text-xl md:text-2xl text-slate-100 font-semibold">Anna Hickson</h3>
               </div>                
@@ -358,11 +358,11 @@ const Home:React.FC<ProductCard> = ({data}) => {
               <Image src='/user5.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
               <div>
                 <div className="flex gap-1">
-                  <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                  <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                  <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                  <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                  <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                  <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
                 </div>
                 <h3 className="text-xl md:text-2xl font-semibold">Yvonne Thompson</h3>
               </div>                
@@ -380,11 +380,11 @@ const Home:React.FC<ProductCard> = ({data}) => {
                 <Image src='/user2.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
                 <div>
                   <div className="flex gap-1">
-                    <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                    <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                    <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                    <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                    <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
+                    <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                    <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                    <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                    <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                    <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
                   </div>
                   <h3 className="text-xl md:text-2xl text-slate-100 font-semibold">Samantha Samuels</h3>
                 </div>                
@@ -401,11 +401,11 @@ const Home:React.FC<ProductCard> = ({data}) => {
                   <Image src='/user3.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
                   <div>
                     <div className="flex gap-1">
-                      <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                      <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                      <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                      <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                      <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
+                      <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                      <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                      <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                      <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                      <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
                     </div>
                     <h3 className="text-xl md:text-2xl text-[#131B28] font-semibold">Gerald Mhlanga</h3>                   
                   </div>                                  
@@ -420,11 +420,11 @@ const Home:React.FC<ProductCard> = ({data}) => {
                   <Image src='/user4.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
                   <div>
                     <div className="flex gap-1">
-                      <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                      <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                      <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                      <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
-                      <Star className="bg-clip-text text-yellow-400 w-5 h-5" strokeWidth={3}/>
+                      <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                      <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                      <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                      <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
+                      <Star className="bg-clip-text text-yellow-400 w-4 h-4 sm:w-5 sm:h-5" strokeWidth={3}/>
                     </div>
                     <h3 className="text-xl md:text-2xl text-[#131B28] font-semibold">Thomas Rafik</h3>                   
                   </div>                                  
@@ -438,15 +438,15 @@ const Home:React.FC<ProductCard> = ({data}) => {
           </div>          
         </div>
       {/* {FAQ} */}
-      <div className="bg-[#131B28] text-[#E9F1F7] flex flex-col items-center justify-center gap-5 rounded-3xl h-[40rem]">
-        <h1 className="text-6xl font-bold text-center text-white">Have A Question? <br/> We Are Here To Help</h1>
+      <div className="bg-[#131B28] text-[#E9F1F7] flex flex-col items-center justify-center gap-5 rounded-3xl h-[30rem]">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center text-white">Have A Question? <br/> We Are Here To Help</h1>
         <div className="flex">
           <Image src="/user6.jpg" width={100} height={100} alt="faq" className="w-10 object-contain rounded-full"/>
           <Image src="/user7.jpg" width={100} height={100} alt="faq" className="w-10 object-contain rounded-full"/>
           <Image src="/user8.jpg" width={100} height={100} alt="faq" className="w-10 object-contain rounded-full"/>
           <Image src="/user9.jpg" width={100} height={100} alt="faq" className="w-10 object-contain rounded-full"/>
         </div>
-        <p>Our customer support is available<br /> monday to friday: 8am-8:30pm.</p>
+        <p className="text-center">Our customer support is available<br /> monday to friday: 8am-8:30pm.</p>
         <button className="bg-[#E7DFC6] py-4 px-8 text-xl font-bold text-slate-500 rounded-2xl">Contact us</button>
       </div>
     </div>
