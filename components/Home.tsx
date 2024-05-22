@@ -327,8 +327,8 @@ const Home:React.FC<ProductCard> = ({data}) => {
           }
       </div>
       {/* {Testimonials} */}
-      <div className="flex flex-col sm:flex-row gap-x-5 gap-y-5 md:gap-y-8 w-full">
-        <div className="flex flex-col items-start space-y-3 rounded-3xl md:w-1/3 lg:w-1/2 h-fit">
+      <div className="flex flex-col sm:flex-row gap-x-5 gap-y-3 md:gap-y-8 w-full">
+        <div className="flex flex-col items-start space-y-3 rounded-3xl xs:w-full sm:w-1/2 md:w-1/3 lg:w-1/2">
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-left inline-flex z-10">
             Testimon<span className="sm:text-[#131B23] md:text-[#E9F1F7] lg:text-[#131B23]">ials</span>
           </h2>
@@ -374,8 +374,8 @@ const Home:React.FC<ProductCard> = ({data}) => {
             </p>
           </div>
         </div>
-        <div className="md:w-2/3 lg:w-1/2 h-80">
-          <div className="bg-[#2274A5] bg-opacity-90  p-4 rounded-3xl flex flex-col items-center gap-2 h-fit">
+        <div className="w-full sm:w-1/2 md:w-2/3 lg:w-1/2 h-fit">
+          <div className="bg-[#2274A5] bg-opacity-90 p-4 rounded-3xl flex flex-col items-center lg:items-start gap-2">
             <div className="flex gap-4 items-start">
                 <Image src='/user2.jpg' className="grayscale rounded-xl object-contain" alt="user image" width={60} height={50} />
                 <div>
@@ -438,7 +438,7 @@ const Home:React.FC<ProductCard> = ({data}) => {
           </div>          
         </div>
       {/* {FAQ} */}
-      {/* <div className="bg-[#131B28] text-[#E9F1F7] flex flex-col items-center justify-center gap-5 rounded-3xl h-[40rem]">
+      <div className="bg-[#131B28] text-[#E9F1F7] flex flex-col items-center justify-center gap-5 rounded-3xl h-[40rem]">
         <h1 className="text-6xl font-bold text-center text-white">Have A Question? <br/> We Are Here To Help</h1>
         <div className="flex">
           <Image src="/user6.jpg" width={100} height={100} alt="faq" className="w-10 object-contain rounded-full"/>
@@ -448,7 +448,7 @@ const Home:React.FC<ProductCard> = ({data}) => {
         </div>
         <p>Our customer support is available<br /> monday to friday: 8am-8:30pm.</p>
         <button className="bg-[#E7DFC6] py-4 px-8 text-xl font-bold text-slate-500 rounded-2xl">Contact us</button>
-      </div> */}
+      </div>
     </div>
   )
 }
