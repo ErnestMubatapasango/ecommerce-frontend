@@ -10,39 +10,15 @@ import {
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRightIcon, CreditCard, Dot, Expand, ShieldCheck, ShoppingCartIcon, Star, Truck } from "lucide-react"
-import usePreviewModal from "@/hooks/use-preview-modal"
-import useCart from "@/hooks/use-cart"
 import { Product } from "@/types"
-import IconButton from "./ui/icon-button"
-import Router from "next/router"
-
-interface ProductCard {
-  data: Product
-}
 
 
-const Home:React.FC<ProductCard> = ({data}) => {
+
+const Home = () => {
 
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   )
-  const handleClick = () => {
-    return Router.push(`/product/${data.id}`)
-  }
-
-  const previewModal = usePreviewModal()
-  const onPreview: React.MouseEventHandler<HTMLButtonElement> = (event) => {
-      event.stopPropagation()
-
-      previewModal.onOpen(data)
-  }
-
-  const cart = useCart()
-  const onAddToCart: React.MouseEventHandler<HTMLButtonElement> = (event) => {
-      event.stopPropagation()
-
-      cart.addItem(data)
-  }
   
   const heroData = [
     {
@@ -51,28 +27,32 @@ const Home:React.FC<ProductCard> = ({data}) => {
         description: `Create the marketplace for your own
         products and start selling in minutes`,
         buttonTitle: 'Get Started',
-    },
+        color: '',
+      },
     {
         id:'hero1',
         title: 'Discover Your Business Power',
         description: `Join our platform and unleash the power
         of e-commerce for your products today`,
         buttonTitle: 'Explore More',
-    },
+        color: '',
+      },
     {
         id:'hero2',
         title: 'Empower Your Sales Journey',
         description: `Transform your passion into profits
         with our easy-to-use online store builder`,
         buttonTitle: 'Launch Today',
-    },
+        color: '',
+      },
     {
         id:'hero3',
         title: 'Monetize Your Creativity',
         description: `Turn your ideas into income streams
         with our customizable e-commerce platform`,
         buttonTitle: 'Begin Here',
-    }
+        color: '',
+      }
   ]
 
 
@@ -163,10 +143,10 @@ const Home:React.FC<ProductCard> = ({data}) => {
           {heroData.map((heroItem: any) => (
             <CarouselItem key={heroItem.id}>
                   <div id={heroItem.id} className='bg-white relative'>
-                    <div className='absolute top-20 left-10 flex flex-col items-center sm:items-start justify-center gap-4 md:gap-6 lg:gap-5 px-5 md:py-1'>
+                    <div className='absolute top-16 xss:top-20 md:top-24 left-10 flex flex-col items-center sm:items-start justify-center gap-4 md:gap-6 lg:gap-5 px-5 md:py-1'>
                         <p className='px-5 py-2 border-2 border-[#E7DFC6] text-white md:text-[#131b23] font-semibold rounded-full'>Hey you</p>
-                        <h1 className='text-3xl sm:text-4xl md:text-5xl sm:w-2/3 xl:text-6xl text-[#131b23] text-center sm:text-left font-extrabold'>{heroItem.title}</h1>
-                        <p className='text-center sm:w-2/3  sm:text-left text-slate-50 text-sm sm:text-lg md:text-xl'>{heroItem.description}</p>
+                        <h1 className='text-3xl sm:text-4xl md:text-5xl xs:w-2/3 xl:text-6xl text-[#131b23] text-center sm:text-left font-extrabold'>{heroItem.title}</h1>
+                        <p className='text-center xs:w-2/3  sm:text-left text-slate-50 text-sm sm:text-lg md:text-xl'>{heroItem.description}</p>
                         <Link href='' target="_blank" className='px-5 py-3 bg-[#E7DFC6] text-[#131b23] text-sm sm:text-xl font-bold rounded-full'>{heroItem.buttonTitle}</Link>
                     </div>
                   </div>
@@ -222,18 +202,6 @@ const Home:React.FC<ProductCard> = ({data}) => {
                         height={400}
                         className="object-contain relative aspect-square bg-white p-2 rounded-xl"
                       />
-                      <div className='absolute z-20 opacity-0 group-hover:opacity-100 transition w-full px-6 bottom-5'>
-                        <div className='flex gap-x-6 justify-center'>
-                          <IconButton 
-                            icon={<Expand size={20}  className='text-gray-600 bg-black'/>}    
-                            onClick={onPreview}
-                          />
-                          <IconButton 
-                            icon={<ShoppingCartIcon size={20}  className='text-gray-600'/>}    
-                            onClick={onAddToCart}
-                          />
-                        </div>                 
-                      </div>
                     </div>
                   </CardHeader>
                   <CardContent>
@@ -302,14 +270,14 @@ const Home:React.FC<ProductCard> = ({data}) => {
       <div className="scroller bg-gray-100">
         <div className="flex w-max justify-center">
           <ul className="flex py-5 md:py-10 justify-between animate-loop-scroll">
-            <li className="flex items-center gap-8 text-gray-500 font-extrabold text-3xl sm:text-5xl md:text-7xl"><Dot size={60} /> <ShieldCheck size={60} strokeWidth={2}/> 30 day guarantee <Dot size={70} /></li>
-            <li className="flex items-center gap-8 text-gray-500 font-extrabold text-3xl sm:text-5xl md:text-7xl"><CreditCard size={60} strokeWidth={2}/> Secure payments </li>
-            <li className="flex items-center gap-8 text-gray-500 font-extrabold text-3xl sm:text-5xl md:text-7xl"><Dot size={60} /> <Truck size={60} strokeWidth={2}/> Free delivery</li>  
+            <li className="flex items-center gap-5 text-gray-500 font-extrabold text-3xl sm:text-5xl md:text-7xl"><Dot className="w-8 h-8 sm:w-11 sm:h-11 md:w-16 md:h-16" /> <ShieldCheck className="w-8 h-8 sm:w-11 sm:h-11 md:w-16 md:h-16" strokeWidth={2}/> 30 day guarantee <Dot size={70} /></li>
+            <li className="flex items-center gap-5 text-gray-500 font-extrabold text-3xl sm:text-5xl md:text-7xl"><CreditCard className="w-8 h-8 sm:w-11 sm:h-11 md:w-16 md:h-16" strokeWidth={2}/> Secure payments </li>
+            <li className="flex items-center gap-5 text-gray-500 font-extrabold text-3xl sm:text-5xl md:text-7xl"><Dot className="w-8 h-8 sm:w-11 sm:h-11 md:w-16 md:h-16" /> <Truck className="w-8 h-8 sm:w-11 sm:h-11 md:w-16 md:h-16" strokeWidth={2}/> Free delivery</li>  
           </ul>
           <ul className="flex py-5 md:py-10 justify-between animate-loop-scroll">
-            <li className="flex items-center gap-8 text-gray-500 font-extrabold text-3xl sm:text-5xl md:text-7xl"><Dot  size={60} /> <ShieldCheck size={60} strokeWidth={2}/> 30 day guarantee <Dot size={70} /></li>
-            <li className="flex items-center gap-8 text-gray-500 font-extrabold text-3xl sm:text-5xl md:text-7xl"><CreditCard size={60} strokeWidth={2}/> Secure payments </li>
-            <li className="flex items-center gap-8 text-gray-500 font-extrabold text-3xl sm:text-5xl md:text-7xl"><Dot size={60} /> <Truck size={60} strokeWidth={2}/> Free delivery</li>  
+            <li className="flex items-center gap-5 text-gray-500 font-extrabold text-3xl sm:text-5xl md:text-7xl"><Dot  className="w-8 h-8 sm:w-11 sm:h-11 md:w-16 md:h-16" /> <ShieldCheck className="w-8 h-8 sm:w-11 sm:h-11 md:w-16 md:h-16" strokeWidth={2}/> 30 day guarantee <Dot size={70} /></li>
+            <li className="flex items-center gap-5 text-gray-500 font-extrabold text-3xl sm:text-5xl md:text-7xl"><CreditCard className="w-8 h-8 sm:w-11 sm:h-11 md:w-16 md:h-16" strokeWidth={2}/> Secure payments </li>
+            <li className="flex items-center gap-5 text-gray-500 font-extrabold text-3xl sm:text-5xl md:text-7xl"><Dot className="w-8 h-8 sm:w-11 sm:h-11 md:w-16 md:h-16" /> <Truck className="w-8 h-8 sm:w-11 sm:h-11 md:w-16 md:h-16" strokeWidth={2}/> Free delivery</li>  
           </ul>
         </div>       
       </div>

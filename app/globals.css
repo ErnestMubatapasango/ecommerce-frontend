@@ -38,13 +38,13 @@
     border-radius: 30px;
     height: 75vh;
   }
-  /* @media  screen and (min-width: 250px) and (max-width: 349px) {
+  @media  screen and (min-width: 0px) and (max-width: 474px) {
    
     #hero ,#hero1 ,#hero2, #hero3 {
-      height: 65vh;
+      height: 50vh;
     }
-  } */
-  @media  screen and (min-width: 250px) and (max-width: 564px) {
+  }
+  @media  screen and (min-width: 475px) and (max-width: 564px) {
    
     #hero ,#hero1 ,#hero2, #hero3 {
       height: 65vh;
