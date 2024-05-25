@@ -41,15 +41,15 @@ const Footer = () => {
                         <p className='text-sm text-[#816C61]'>Sign up to receive news, app updates,<br /> and other exclusive info via email.</p>
                         
                         <div className='flex flex-col md:flex-row justify-center gap-2'>
-                            <input placeholder='Email' type='text' className=' text-center md:text-left focus:outline-none indent-2 text-slate-400 p-1 bg-transparent border-2 border-slate-400 rounded-full '/>
-                            <button className='p-2 bg-slate-400 rounded-full text-[#816C61] border-none'>Subscribe</button>
+                            <input placeholder='Email' type='text' className=' text-center md:text-left focus:outline-none indent-2 text-slate-400 p-1 bg-transparent border-2 border-[#131b28] rounded-full '/>
+                            <button className='p-2 bg-[#131b28] rounded-full text-slate-400 border-none'>Subscribe</button>
                         </div>
                         
                     </div>
                 </div>
             </div>
             <hr className='border-1 border-slate-400' />
-            <p className='pt-4 text-center text-sm text-[#816C61]'>Copyright &copy; 2024 All rights reserved | Website Design by <Link className='font-bold tracking-widest text-slate-400 ' href="https://www.digitalbots.agency" target='_blank'>Digital Bots Agency</Link></p>
+            <p className='pt-4 text-center text-sm text-[#816C61]'>Copyright &copy; 2024 All rights reserved | Website Design by <Link className='font-bold tracking-widest text-[#131b28]' href="https://www.digitalbots.agency" target='_blank'>Digital Bots Agency</Link></p>
         </div>
     </div>
   )
