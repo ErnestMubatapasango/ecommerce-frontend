@@ -43,7 +43,7 @@ const AboutPage = () => {
         }
     ];
   return (
-    <div className="mx-2 md:mx-8 pt-20 mt-20 space-y-10">
+    <div className="mx-2 md:mx-8 pt-20 mt-20 space-y-10 text-[#131b28]">
         <div className='space-y-5'>
             <h1 className='text-7xl font-medium '>Denim Crafted for All:<br /> Perfect Fit, Timeless Style!</h1>
             <p className='text-2xl font-light'>
@@ -60,7 +60,7 @@ const AboutPage = () => {
                     <div key={item.title} className='flex gap-4'>
                         {item.icon}
                         <div >
-                            <h3 className='text-2xl font-medium text-slate-500'>{item.title}</h3>
+                            <h3 className='text-3xl font-medium '>{item.title}</h3>
                             <p className='text-base font-normal'>{item.tagline}</p>
                         </div>
                     </div>
@@ -73,7 +73,7 @@ const AboutPage = () => {
                 return (
                 <div key={item.title} className=' rounded-2xl space-y-2 p-5 w-1/3 flex flex-col  items-start'>
                     <Image src={item.image} alt='product image' width={400} height={600} className='object-cover h-80 grayscale rounded-2xl' />
-                    <h3 className='text-2xl font-semibold text-slate-600'>{item.title}</h3>
+                    <h3 className='text-2xl font-semibold '>{item.title}</h3>
                     <p className='text-base font-light tracking-wide'>{item.description}</p>
                 </div>
             )})}
