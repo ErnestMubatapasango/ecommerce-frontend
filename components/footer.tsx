@@ -7,7 +7,7 @@ const Footer = () => {
     //     <p className="text-black text-center py-10">&copy; 2024 Digital Bots Store, Inc. All rights reserved</p>
     // </div>
     <div className='w-full relative bottom-0'>
-        <div className='bg-[#E7DFC6] mx-2 md:mx-8 md:px-10 px-5  py-10 mt-10 mb-2 rounded-2xl'>
+        <div className='bg-[#E7DFC6] mx-2 md:mx-8 md:px-10 px-5  py-10 mt-10 mb-2 rounded-3xl'>
             <div className='py-3'>
                 <div className='flex flex-col md:flex-row justify-between flex-wrap gap-y-5'>
                     <div className='space-y-3'>
