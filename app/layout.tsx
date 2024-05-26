@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar";
 import ModalProvider from "@/providers/modal-providers";
 import ToastProvider from "@/providers/toast-providers";
 
+
 const font = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ export default function RootLayout({
         <ToastProvider />
         <Navbar />
         {children}
-        <Footer />
+        <Footer />        
       </body>
     </html>
   );
