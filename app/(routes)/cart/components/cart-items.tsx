@@ -12,10 +12,14 @@ interface cartItemsProps {
 const CartItem: React.FC<cartItemsProps> = ({data}) => {
 
     const cart = useCart()
-
+    const [quantity, setQuantity] = React.useState(data.quantity ?? 1)
     const onRemove = () => {
         cart.removeItem(data.id)
         console.log("button clicked")
+    }
+    const handleQuantityChange = (newQuantity: number) => {
+        setQuantity(newQuantity)
+        cart.updatedQuantity(data.id, newQuantity)
     }
   return (
     <li className='flex py-6 border-b'>
@@ -42,6 +46,24 @@ const CartItem: React.FC<cartItemsProps> = ({data}) => {
                 </div>
 
                 <Currency value={data.price} />
+                <div className='flex gap-3'>
+                    <button
+                        className='bg-gray-200 p-1 font-bold text-lg cursor-pointer rounded-full h-8 w-8 shadow-md'
+                        onClick={() => handleQuantityChange(quantity - 1)}
+                        disabled={quantity === 1}
+                    >
+                        -
+                    </button>
+
+                    <input className='font-bold w-5 text-center text-xl' type='number' value={quantity}  onChange={(e) => handleQuantityChange(parseInt(e.target.value))}/>
+
+                    <button
+                            className='bg-gray-200 p-1 font-bold text-lg cursor-pointer rounded-full h-8 w-8 shadow-md'
+                            onClick={() => handleQuantityChange(quantity + 1)}
+                        >
+                            +
+                        </button>
+                </div>
             </div>
 
             
