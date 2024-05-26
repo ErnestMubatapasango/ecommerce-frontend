@@ -45,7 +45,7 @@ const ContactPage = () => {
       }
 
   return (
-    <div className="mx-2 md:mx-8 pt-20 mt-20 space-y-10" id="contact">
+    <div className="mx-2 md:mx-8 pt-20 mt-20 mb-20 space-y-10" id="contact">
         <div className="bg-slate-100 text-[#131b28] flex flex-col md:flex-row justify-between p-8 rounded-3xl">
             <div className="w-1/2 space-y-8">
                 <h1 className="text-7xl font-extrabold ">Get in touch<br /> with our team today</h1>
