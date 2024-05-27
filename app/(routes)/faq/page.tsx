@@ -5,12 +5,12 @@ import React from 'react'
 const FAQ = () => {
   return (
     <div className="mx-2 md:mx-8 pt-20 mt-20 space-y-10 text-[#131b28]">
-        <h1 className="text-7xl font-extrabold text-center">Frequently Asked Questions</h1>
-        <div className='flex w-full items-start justify-between gap-5'>
-            <div className='w-1/2 space-y-5'>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-center">Frequently Asked Questions</h1>
+        <div className='flex flex-col md:flex-row w-full items-start justify-between gap-5'>
+            <div className='w-full md:w-1/2 space-y-5'>
                 <Card className='bg-[#E9F1F7] text-[#131b28] hover:bg-[#131b28] hover:text-[#E9F1F7] rounded-3xl border-none outline-none text-2xl transition-colors'>
                     <CardHeader>
-                        <CardTitle>
+                        <CardTitle className='text-xl font-semibold'>
                             What payment methods do you accept?
                         </CardTitle>
                     </CardHeader>
@@ -21,10 +21,10 @@ const FAQ = () => {
                         </CardDescription>
                     </CardContent>
                 </Card>
-                <div className='flex gap-5'>
+                <div className='flex flex-col xs:flex-row gap-5'>
                     <Card className='bg-[#E9F1F7] text-[#131b28] hover:bg-[#131b28] hover:text-[#E9F1F7] rounded-3xl border-none outline-none text-2xl transition-colors'>
                         <CardHeader>
-                            <CardTitle>
+                            <CardTitle className='text-xl font-semibold'>
                                 What is your return policy?
                             </CardTitle>
                         </CardHeader>
@@ -36,49 +36,7 @@ const FAQ = () => {
                     </Card>
                     <Card className='bg-[#E9F1F7] text-[#131b28] hover:bg-[#131b28] hover:text-[#E9F1F7] rounded-3xl border-none outline-none text-2xl transition-colors'>
                         <CardHeader>
-                            <CardTitle>
-                                How can I contact customer support?
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <CardDescription>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel metus et elit gravida.
-                            </CardDescription>
-                        </CardContent>
-                    </Card>
-                </div>
-                <Card className='bg-[#E9F1F7] text-[#131b28] hover:bg-[#131b28] hover:text-[#E9F1F7] rounded-3xl border-none outline-none text-2xl transition-colors'>
-                    <CardHeader>
-                        <CardTitle>
-                            Are my personal and payment details secure?
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <CardDescription>
-                            Proin a lorem libero. Integer aliquet consectetur libero ac volutpat. 
-                            Nulla in dictum purus. Suspendisse suscipit malesuada libero, vel tristique enim elementum vel.
-                        </CardDescription>
-                    </CardContent>
-                </Card>
-            </div>
-
-            <div className='w-1/2 space-y-5'>              
-                <div className='flex gap-5'>
-                    <Card className='bg-[#E9F1F7] text-[#131b28] hover:bg-[#131b28] hover:text-[#E9F1F7] rounded-3xl border-none outline-none text-2xl transition-colors'>
-                        <CardHeader>
-                            <CardTitle>
-                                How long does shipping take?
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <CardDescription>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel metus et elit gravida
-                            </CardDescription>
-                        </CardContent>
-                    </Card>
-                    <Card className='bg-[#E9F1F7] text-[#131b28] hover:bg-[#131b28] hover:text-[#E9F1F7] rounded-3xl border-none outline-none text-2xl transition-colors'>
-                        <CardHeader>
-                            <CardTitle>
+                            <CardTitle className='text-xl font-semibold'>
                                 Can I track my order?
                             </CardTitle>
                         </CardHeader>
@@ -91,7 +49,49 @@ const FAQ = () => {
                 </div>
                 <Card className='bg-[#E9F1F7] text-[#131b28] hover:bg-[#131b28] hover:text-[#E9F1F7] rounded-3xl border-none outline-none text-2xl transition-colors'>
                     <CardHeader>
-                        <CardTitle>
+                        <CardTitle className='text-xl font-semibold'>
+                            Are my personal and payment details secure?
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <CardDescription>
+                            Proin a lorem libero. Integer aliquet consectetur libero ac volutpat. 
+                            Nulla in dictum purus. Suspendisse suscipit malesuada libero, vel tristique enim elementum vel.
+                        </CardDescription>
+                    </CardContent>
+                </Card>
+            </div>
+
+            <div className='w-full md:w-1/2 space-y-5'>              
+                <div className='flex flex-col xs:flex-row gap-5'>
+                    <Card className='bg-[#E9F1F7] text-[#131b28] hover:bg-[#131b28] hover:text-[#E9F1F7] rounded-3xl border-none outline-none text-2xl transition-colors'>
+                        <CardHeader>
+                            <CardTitle className='text-xl font-semibold'>
+                                How long does shipping take?
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <CardDescription>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel metus et elit gravida
+                            </CardDescription>
+                        </CardContent>
+                    </Card>
+                    <Card className='bg-[#E9F1F7] text-[#131b28] hover:bg-[#131b28] hover:text-[#E9F1F7] rounded-3xl border-none outline-none text-2xl transition-colors'>
+                        <CardHeader>
+                            <CardTitle className='text-xl font-semibold'>
+                                How can I contact customer support?
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <CardDescription>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel metus et elit gravida.
+                            </CardDescription>
+                        </CardContent>
+                    </Card>
+                </div>
+                <Card className='bg-[#E9F1F7] text-[#131b28] hover:bg-[#131b28] hover:text-[#E9F1F7] rounded-3xl border-none outline-none text-2xl transition-colors'>
+                    <CardHeader>
+                        <CardTitle className='text-xl font-semibold'>
                             Are there any discounts or promotions available?
                         </CardTitle>
                     </CardHeader>
@@ -102,10 +102,10 @@ const FAQ = () => {
                         </CardDescription>
                     </CardContent>
                 </Card>
-                <div className='flex gap-5'>
+                <div className='flex flex-col xs:flex-row gap-5'>
                     <Card className='bg-[#E9F1F7] text-[#131b28] hover:bg-[#131b28] hover:text-[#E9F1F7] rounded-3xl border-none outline-none text-2xl transition-colors'>
                         <CardHeader>
-                            <CardTitle>
+                            <CardTitle className='text-xl font-semibold'>
                                 Do you offer international shipping?
                             </CardTitle>
                         </CardHeader>
@@ -117,7 +117,7 @@ const FAQ = () => {
                     </Card>
                     <Card className='bg-[#E9F1F7] text-[#131b28] hover:bg-[#131b28] hover:text-[#E9F1F7] rounded-3xl border-none outline-none text-2xl transition-colors'>
                         <CardHeader>
-                            <CardTitle>
+                            <CardTitle className='text-xl font-semibold'>
                             How can I change or cancel my order?
                             </CardTitle>
                         </CardHeader>
@@ -131,7 +131,7 @@ const FAQ = () => {
             </div>
         </div>
         {/* {FAQ} */}
-      <div className="bg-[#131B28] text-[#E9F1F7] flex flex-col items-center justify-center gap-5 rounded-3xl h-[30rem]">
+      <div className="bg-[#131B28] text-[#E9F1F7] flex flex-col items-center p-1 justify-center gap-5 rounded-3xl h-[30rem]">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center text-white">Have A Question? <br/> We Are Here To Help</h1>
         <div className="flex">
           <Image src="/user6.jpg" width={100} height={100} alt="faq" className="w-10 object-contain rounded-full"/>
