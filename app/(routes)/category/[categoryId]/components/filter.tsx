@@ -37,6 +37,12 @@ const Filter:React.FC<FilterProps> = ({data, name, valueKey}) => {
 
     router.push(url )
   }
+  const removeFilters = () => {
+    const current = new URL(window.location.href)
+    current.searchParams.delete(valueKey)  
+    const url = current.toString()
+    router.push(url)
+  }
   return (
     <div className='mb-8'> 
       <h3 className='text-lg font-semibold'>
@@ -57,6 +63,7 @@ const Filter:React.FC<FilterProps> = ({data, name, valueKey}) => {
           )
         })}
       </div>
+      {selectedValue && <Button className='mt-5 rounded-md text-sm bg-black p-2 border border-gray-300 text-white' onClick={removeFilters}>Clear Filter</Button>}
     </div>
   )
 }
