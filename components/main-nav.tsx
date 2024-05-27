@@ -6,10 +6,10 @@ import { usePathname } from 'next/navigation'
 import React from 'react'
 import Container from '@/components/ui/container';
 
-interface MainNavProps {
-    data: Category[]
-}
-const MainNav: React.FC<MainNavProps> = ({data}) => {
+// interface MainNavProps {
+//     data: Category[]
+// }
+const MainNav = () => {
 
     const pathname = usePathname();
     const routes = [
