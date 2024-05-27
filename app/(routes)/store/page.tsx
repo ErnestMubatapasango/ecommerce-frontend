@@ -13,19 +13,15 @@ import MobileFilters from '../category/[categoryId]/components/mobile-filters'
 
 
 interface categoriesPageProps {
-  params: {
-    categoryId: string
-  }
   searchParams: {
     colorId: string
     sizeId: string
     categoryId: string
   }
 }
-const StorePage:React.FC<categoriesPageProps> = async({searchParams, params}) => {
+const StorePage:React.FC<categoriesPageProps> = async({searchParams}) => {
 
     const  categories = await getCategories()
-    //const category = await getCategory(params.categoryId)
     const sizes = await getSizes()
     const colors = await getColors()
     const products = await getProducts({

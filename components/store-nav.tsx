@@ -75,6 +75,12 @@ const StoreNav:React.FC<FilterProps> = ({data, valueKey}) => {
 
     router.push(url )
   }
+  const removeFilters = () => {
+    const current = new URL(window.location.href)
+    current.searchParams.delete(valueKey)  
+    const url = current.toString()
+    router.push(url)
+  }
   return (
     <div className='mb-8'> 
       <hr className='my-4'/>
@@ -91,6 +97,7 @@ const StoreNav:React.FC<FilterProps> = ({data, valueKey}) => {
             </div>
           )
         })}
+        {selectedValue && <Button className="text-xl  font-semibold  p-2 rounded-2xl text-neutral-100 bg-[#131b28] transition-colors" onClick={removeFilters}>Clear Filter</Button>}
       </div>
     </div>
   )
