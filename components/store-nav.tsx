@@ -89,7 +89,7 @@ const StoreNav:React.FC<FilterProps> = ({data, valueKey}) => {
           return (
             <div key={filter.id} className='flex items-center'>
               <Button 
-                className={cn("text-2xl  font-semibold  p-2 rounded-2xl transition-colors", selectedValue === filter.id ? "text-neutral-100 bg-[#131b28]": "text-slate-700 bg-gray-200")}
+                className={cn("text-sm smm:text-2xl  font-semibold  p-2 rounded-2xl transition-colors", selectedValue === filter.id ? "text-neutral-100 bg-[#131b28]": "text-slate-700 bg-gray-200")}
                 onClick={() => onClick(filter.id)}
               >
                 {filter.name}
