@@ -1,6 +1,5 @@
 import React from 'react'
 import  {CreditCard, Truck, Undo2} from 'lucide-react'
-import { title } from 'process'
 import Image from 'next/image'
 const AboutPage = () => {
 
