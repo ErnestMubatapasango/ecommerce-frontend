@@ -31,12 +31,15 @@ const StorePage:React.FC<categoriesPageProps> = async({searchParams}) => {
     })
   return (
     <div className="mx-2 md:mx-8 pt-20 mt-20 space-y-10">
-      <div className="flex items-center justify-start gap-5">
-        <h2 className='text-4xl font-extrabold'>Store |</h2>
-        <StoreNav 
-          data={categories}
-          valueKey="categoryId"
-        />  
+      <div className="flex items-center justify-start gap-5 px-4 sm:px-6 lg:px-8">
+        <h2 className='text-4xl font-extrabold text-[#131b28]'>Store |</h2>
+        <div className='hidden sm:block'>
+          <StoreNav 
+            data={categories}
+            valueKey="categoryId"
+          />
+        </div>
+          
       </div>
       {/* / */}
       <div>
@@ -45,20 +48,18 @@ const StorePage:React.FC<categoriesPageProps> = async({searchParams}) => {
           <div className='px-4 sm:px-6 lg:px-8'>
               <div className='lg:grid lg:grid-cols-5 lg:gap-x-8'>
                   {/**Mobile filters */}
-                  <MobileFilters sizes={sizes} colors={colors} />
-                      <div className='hidden lg:block'>
-                          
-                          <Filter 
-                              data={sizes}
-                              name="Sizes"
-                              valueKey="sizeId"
-                          />
-                          <Filter 
-                              data={colors}
-                              name="Colors"
-                              valueKey="colorId"
-                          />
-                          
+                  <MobileFilters categories={categories} sizes={sizes} colors={colors} />
+                      <div className='hidden lg:block'>  
+                        <Filter 
+                            data={sizes}
+                            name="Sizes"
+                            valueKey="sizeId"
+                        />
+                        <Filter 
+                            data={colors}
+                            name="Colors"
+                            valueKey="colorId"
+                        />   
                       </div>
               
                   <div className='mt-6 lg:col-span-4'>

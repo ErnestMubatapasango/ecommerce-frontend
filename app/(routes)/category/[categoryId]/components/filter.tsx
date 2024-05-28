@@ -1,13 +1,13 @@
 "use client"
 import Button from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { Color, Size } from '@/types'
+import { Category, Color, Size } from '@/types'
 import { useRouter, useSearchParams } from 'next/navigation'
 import queryString from 'query-string'
 import React from 'react'
 
 interface FilterProps {
-    data: (Size | Color) [],
+    data: (Category | Size | Color) [],
     name: string
     valueKey: string
 }
