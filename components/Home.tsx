@@ -1,7 +1,7 @@
 "use client"
 import * as React from "react"
 import Autoplay from "embla-carousel-autoplay"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   Carousel,
   CarouselContent,
@@ -9,8 +9,8 @@ import {
 } from "@/components/ui/carousel"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRightIcon, CreditCard, Dot, Expand, ShieldCheck, ShoppingCartIcon, Star, Truck } from "lucide-react"
-import { Product } from "@/types"
+import { ArrowRightIcon, CreditCard, Dot, Expand, ShieldCheck, Star, Truck } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 
 
@@ -19,7 +19,7 @@ const Home = () => {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   )
-  
+  const router = useRouter()
   const heroData = [
     {
         id:'hero',
@@ -206,12 +206,14 @@ const Home = () => {
                   </CardHeader>
                   <CardContent>
                     <CardTitle className="text-lg tracking-normal">{product.title}</CardTitle>
-                    <CardDescription className="capitalize text-base tracking-wide">
+                    <div className="capitalize text-base tracking-wide">
                       <span className="absolute top-12 inline-flex items-center font-semibold rounded-tl-none rounded-bl-none rounded-md bg-gray-200 px-2 py-1 text-sm text-slate-500 ring-1 ring-inset ring-gray-600/10">
                         {product.category}
                       </span>
-                      <p>{product.description}</p>
-                      </CardDescription>
+                      <div>                     
+                        <p>{product.description}</p>
+                      </div>
+                    </div>                  
                   </CardContent>
                   <CardFooter className="text-lg font-semibold text-slate-500">$ {product.price}</CardFooter>
                 </Card>
@@ -415,7 +417,12 @@ const Home = () => {
           <Image src="/user9.jpg" width={100} height={100} alt="faq" className="w-10 object-contain rounded-full"/>
         </div>
         <p className="text-center">Our customer support is available<br /> monday to friday: 8am-8:30pm.</p>
-        <button className="bg-[#E7DFC6] py-4 px-8 text-xl font-bold text-slate-500 rounded-2xl">Contact us</button>
+        <button 
+          className="bg-[#E7DFC6] py-4 px-8 text-xl font-bold text-slate-500 rounded-2xl"
+          onClick={() => router.push('/contact')}
+        >
+          Contact us
+        </button>
       </div>
     </div>
   )

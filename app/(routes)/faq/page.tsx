@@ -1,8 +1,13 @@
+"use client"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const FAQ = () => {
+
+    const router = useRouter()
+    
   return (
     <div className="mx-2 md:mx-8 pt-20 mt-20 space-y-10 text-[#131b28]">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-center">Frequently Asked Questions</h1>
@@ -140,7 +145,12 @@ const FAQ = () => {
           <Image src="/user9.jpg" width={100} height={100} alt="faq" className="w-10 object-contain rounded-full"/>
         </div>
         <p className="text-center">Our customer support is available<br /> monday to friday: 8am-8:30pm.</p>
-        <button className="bg-[#E7DFC6] py-4 px-8 text-xl font-bold text-slate-500 rounded-2xl">Contact us</button>
+        <button 
+          className="bg-[#E7DFC6] py-4 px-8 text-xl font-bold text-slate-500 rounded-2xl"
+          onClick={() => router.push('/contact')}
+        >
+          Contact us
+        </button>
       </div>
     </div>
   )
