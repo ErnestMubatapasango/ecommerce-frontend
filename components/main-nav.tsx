@@ -9,7 +9,7 @@ import Container from '@/components/ui/container';
 // interface MainNavProps {
 //     data: Category[]
 // }
-const MainNav = () => {
+const MainNav = (props: {toggle: any}) => {
 
     const pathname = usePathname();
     const routes = [
@@ -41,13 +41,14 @@ const MainNav = () => {
     ]
   return (
     <Container>
-    <nav className="mx-6 flex items-center gap-4">
+    <nav className="mx-6 flex flex-col smm:flex-row justify-center items-center gap-4">
         {routes.map((route) => (
             <Link
                 href={route.href}
                 key={route.href}
+                onClick={(e) => props.toggle()}
                 className={cn("text-md font-medium transition-colors hover:text-black",
-                    route.active ? "text-black": "text-neutral-600"
+                    route.active ? "text-black font-bold": "text-neutral-600"
                 )}
             >
                 {route.label}

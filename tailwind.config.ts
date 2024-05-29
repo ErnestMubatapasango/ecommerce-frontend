@@ -23,6 +23,7 @@ const config = {
         "xss":"350px",
         "xs": "450px",
         "sm": "500px",
+        "smm": "640px"
       }, 
       aspectRatio: {
         '4/3': '4 / 3',
