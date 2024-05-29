@@ -1,8 +1,12 @@
+"use client"
 import React from 'react'
 import  {CreditCard, Truck, Undo2} from 'lucide-react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+
 const AboutPage = () => {
 
+    const router = useRouter()
     const data = [
         {
             title: '45 Days Free Return',
@@ -14,7 +18,7 @@ const AboutPage = () => {
             tagline: 'Trusted payment options',
             icon: <CreditCard className='text-[#e9c96c] w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14' strokeWidth={2}/>,
         },
-        {//#E7DFC6
+        {
             title: 'Free Shipping',
             tagline: '$20+ purchases ship free',
             icon: <Truck className='text-[#e9c96c] w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14' strokeWidth={2}/>,
@@ -90,7 +94,9 @@ const AboutPage = () => {
                     The store is packed with a curated collection of that speaks to your unique style
                     Ready to transform your look?
                 </p>
-                <button className='text-slate-500 bg-[#E7DFC6] border w-50 rounded-full p-3 text-base font-medium transition-colors ease-in-out hover:bg-black hover:scale-125 duration-500'>
+                <button
+                    onClick={() => router.push('/store')} 
+                    className='text-slate-500 bg-[#E7DFC6] border w-50 rounded-full p-3 text-base font-medium transition ease-in hover:bg-[#131b28] duration-500'>
                     Checkout our Store
                 </button>
             </div>

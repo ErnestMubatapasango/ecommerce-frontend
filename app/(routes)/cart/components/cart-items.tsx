@@ -37,7 +37,7 @@ const CartItem: React.FC<cartItemsProps> = ({data}) => {
             </div>
             <div className='relative sm:grid sm:grid-cols-2 sm:gap-x-6 pr-9 sm:pr-0'>
                 <div className='flex justify-between'>
-                    <p className='font-semibold text-lg text-black'>{data.name}</p>
+                    <p className='font-light text-lg text-black'>{data.name}</p>
                 </div>
 
                 <div className='mt-1 flex text-sm'>
@@ -45,7 +45,7 @@ const CartItem: React.FC<cartItemsProps> = ({data}) => {
                     <p className='text-gray-500 pl-4 border-l border-gray-200 ml-4 '>{data.size.name}</p>
                 </div>
 
-                <Currency value={data.price} />
+                <Currency value={data.price * data.quantity} />
                 <div className='flex gap-3'>
                     <button
                         className='bg-gray-200 p-1 font-bold text-lg cursor-pointer rounded-full h-8 w-8 shadow-md'
@@ -55,7 +55,7 @@ const CartItem: React.FC<cartItemsProps> = ({data}) => {
                         -
                     </button>
 
-                    <input className='font-bold w-5 text-center text-xl' type='number' value={quantity}  onChange={(e) => handleQuantityChange(parseInt(e.target.value))}/>
+                    <input className='font-bold w-5 text-center text-xl no-arrows'  type='number' value={quantity}  onChange={(e) => handleQuantityChange(parseInt(e.target.value))}/>
 
                     <button
                             className='bg-gray-200 p-1 font-bold text-lg cursor-pointer rounded-full h-8 w-8 shadow-md'

@@ -12,13 +12,13 @@ const Navbar = () => {
 
   //const categories = await getCategories()
   const [mobileMenu, setMobileMenu] = React.useState(false)
-  
+
   const toggleMobileMenu = () => {
     setMobileMenu(prevMenu => !prevMenu)
   }
 
   return (
-    <div className='fixed z-20 w-full top-[2rem] px-2 md:px-6 lg:px-8'>
+    <div className='fixed z-20 w-full top-[1rem] px-2 md:px-6 lg:px-8'>
       <div className='h-[4rem] backdrop-blur-xl bg-white shadow-lg backdrop-filter bg-opacity-20 rounded-xl'>
         <Container>
             <div className='h-16 flex items-center justify-between px-2 sm:px-4 lg:px-6 '>
