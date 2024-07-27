@@ -13,7 +13,7 @@ const VoiceglowWidget: React.FC = () => {
           region: 'na', // 'eu' or 'na' corresponding to Europe and North America
           render: 'popup', // 'popup' or 'full-width'
           stylesheets: [
-            // Base Voiceglow CSS
+            // Base Voiceglow CSS 
             "https://storage.googleapis.com/voiceglow-cdn/vg_live_build/styles.css",
             // Add your custom CSS stylesheets, Can also add relative URL ('/public/your-file.css)
           ],
